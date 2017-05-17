@@ -4,7 +4,7 @@ var EXTRACT_TEXT_PLUGIN = require('extract-text-webpack-plugin')
 var HTML_WEBPACK_PLUGIN = require('html-webpack-plugin');//可以将打包好的文件动态加载到
 
 var path = require('path')
-var ROOT_PATH = path.join(__dirname, '../');
+var ROOT_PATH = path.join(__dirname, '/');
 var ENV = process.env.npm_lifecycle_event;
 
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js')
@@ -15,11 +15,11 @@ var config = {
     //支持数组形式，将加载数组中的所有模块，但以最后一个模块作为输出,比如下面数组里面的js,全部压缩在了vendor这个文件这里
     entry: {
         vendors: ['angular', 'angular-ui-router','angular-animate','moment'],
-        app: './src/app.js'
+        app: path.join(ROOT_PATH + './src/app.js')
     },
     //入口文件输出配置
     output: {
-        path: './build', //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它.名字可以随便起
+        path: path.join(ROOT_PATH + './build'), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它.名字可以随便起
         filename: ENV === 'build' ? 'js/[name].js':'js/[name].[hash].js',//每个页面对应的主js的生成配置。比如我的app.js打包后就为  js/app.bundle.js
         chunkFilename: 'js/[id].chunks.js'//bundle生成的配置
     },
@@ -45,12 +45,13 @@ var config = {
     resolve: {
         modulesDirectories: ['node_modules'],
         alias: {
-            'npm': '/node_modules',
-            // 'jquery': 'jquery/dist/jquery.min.js',
-            'angular-ui-router': 'angular-ui-router/release/angular-ui-router.min.js',
-            'angular': 'angular/angular.min.js',
-            'angular-animate': 'angular-animate/angular-animate.min.js',
-            'moment': 'moment/moment.js'
+            'npm': ROOT_PATH  + '/node_modules'
+            // 'npm': '/node_modules',
+            // // 'jquery': 'jquery/dist/jquery.min.js',
+            // 'angular-ui-router': 'angular-ui-router/release/angular-ui-router.min.js',
+            // 'angular': 'angular/angular.min.js',
+            // 'angular-animate': 'angular-animate/angular-animate.min.js',
+            // 'moment': 'moment/moment.js'
         },
         extensions: ['', '.js', '.html', '.jade', '.css', '.styl']
 
@@ -92,10 +93,6 @@ var config = {
             },
         ]
     },
-    babel: {
-        presets: ['es2015'],
-        plugin: ['transform-runtime']
-    },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors',// 将公共模块提取，生成名为`vendors`bundle
@@ -109,11 +106,11 @@ var config = {
         // 使用require('jquery')引用写起来比较多，
         // 这个时候就可以使用ProvidePlugin 把jquery设置为全局的，
         // 每个页面就可以 直接使用了。
-        // new webpack.ProvidePlugin({
-        //     $: 'jquery',
-        //     jQuery: 'jquery',
-        //     'window.jquery': 'jquery'
-        // }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jquery': 'jquery'
+        }),
         new EXTRACT_TEXT_PLUGIN('css/[name].css', {allChunks: true}),
         new HTML_WEBPACK_PLUGIN({
             // favicon: 'favicon.ico',
@@ -138,4 +135,5 @@ var config = {
         })
     ]
 }
+console.log(config.babel)
 module.exports = config
