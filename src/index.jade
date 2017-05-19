@@ -1,9 +1,9 @@
 doctype html
-html(lang='en' ng-app="demo-app" ng-strict-di)
+html(lang='en' ng-app="demoApp" ng-strict-di)
   //这个指令的作用就是：可以强制使用这种标准的注入写法（如果不这样写，就是直接报错）。
   head
     meta(charset='UTF-8')
     title Demo-ls
   body(ng-cloak)
     //ng-cloak  ng-cloak防止页面闪烁 指令会将内部元素隐藏，直到路由调用对应的页面时才显示出来。
-    div(ui-view='')
+    div(ui-view="")
