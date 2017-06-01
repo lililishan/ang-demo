@@ -115,7 +115,7 @@ var config = {
         new HTML_WEBPACK_PLUGIN({
             // favicon: 'favicon.ico',
             filename: './index.html',//生成的html存放路径，相对于 path
-            template: './src/home.jade',
+            template: './src/index.jade',
             chunks: ['vendors', 'app'],//需要引入的chunk，不配置就会引入所有页面的资源.名字来源于你的入口文件
             inject: true,//允许插件修改哪些内容，包括head与body
             minify: {//压缩HTML文件

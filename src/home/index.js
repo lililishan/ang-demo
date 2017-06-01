@@ -10,18 +10,15 @@ export default angular.module('app.home', [])
                 // params: {
                 //     isNew: null
                 // },
-                component: 'dashboard'
+                template: homeTemplate,
+                controller: homeCtrl
             })
             .state('detail', {
                 parent: 'app',
                 url: '/homeIndex/detail',
-                component: 'chartDetail'
             })
 
 
     })
-    .component('dashboard', {
-        template: homeTemplate,
-        controller: homeCtrl
-    })
+
     .name
