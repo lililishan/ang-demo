@@ -2,9 +2,10 @@ import 'angular'
 import 'angular-ui-router'
 
 /*模块注入*/
-import nav from "./nav/index"
-import home from "./home/index"
-import appTemplate from "./app"
+import appTemplate from "./app.jade"
+import nav from "./nav"
+import home from "./home"
+
 console.log(Array.from('hello'))
 console.log(`
  ____ 
@@ -15,18 +16,21 @@ console.log(`
 `)
 
 angular.module('demoApp', ['ui.router', nav, home])
+
     .config(($stateProvider, $urlRouterProvider) => {
         'ngInject'
+
 
         $stateProvider.state('app', {
             abstract: true,
             template: appTemplate,
             controller:function(){
                 'ngInject'
-                alert(1)
+                console.log(Array.from('abcdef'))
             },
         })
-        $urlRouterProvider.when('', '/homeIndex')
+        $urlRouterProvider.when('', '/app')
+        
     })
     .config(($qProvider) => {
         'ngInject'

@@ -6,7 +6,7 @@ export default angular.module('app.home', [])
         $stateProvider
             .state('home', {
                 parent: 'app',
-                url: '/homeIndex',
+                url: '/app',
                 // params: {
                 //     isNew: null
                 // },

@@ -30,7 +30,7 @@ var config = {
         hot: false, //热启动
         proxy: {
             '/rap/*': {
-                target: 'http://192.168.0.30/mockjsdata/33/',
+                // target: 'http://192.168.0.30/mockjsdata/33/',
                 pathRewrite: {
                     '^/rap': ''
                 },
