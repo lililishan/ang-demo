@@ -43,7 +43,7 @@ var config = {
     },
     //
     resolve: {
-        modulesDirectories: ['node_modules'],
+        modulesDirectories: ['node_modules', ROOT_PATH + './'],
         alias: {
             'npm': ROOT_PATH  + '/node_modules'
             // 'npm': '/node_modules',
