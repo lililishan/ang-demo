@@ -1,5 +1,6 @@
 import homeTemplate from './home.jade'
 import homeCtrl from './home.controller'
+import detailTem from './detail.jade'
 export default angular.module('app.home', [])
     .config(($stateProvider) => {
         'ngInject'
@@ -16,6 +17,7 @@ export default angular.module('app.home', [])
             .state('detail', {
                 parent: 'app',
                 url: '/homeIndex/detail',
+                template: detailTem
             })
 
 

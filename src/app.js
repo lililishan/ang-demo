@@ -1,10 +1,16 @@
 import 'angular'
 import 'angular-ui-router'
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.css'
 
 /*模块注入*/
 import appTemplate from "./app.jade"
+
 import nav from "./nav"
 import home from "./home"
+
+// import commons from'./commons'
+import './index.styl'
 
 console.log(Array.from('hello'))
 console.log(`

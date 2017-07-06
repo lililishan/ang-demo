@@ -1,5 +1,121 @@
+
+@require '../commons/css/global.styl'
 header
-  width 600px
+  width 100%
   height 34px
-  line-height 34px
-  border 1px solid red
+  //导航
+  .navigation
+    position relative
+    width 100%
+    height 34px
+    float left
+    padding-left 20px
+    box-sizing border-box
+    background linear-gradient(to right, #333, #646464)
+    .header-top-bottom
+      position absolute
+      top 0
+      left 0
+      z-index 24
+      height 1px
+      width 100%
+      background rgba(255, 255, 255, .1)
+    .nav-mask
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      background rgba(0, 0, 0, .15)
+      z-index 22
+    li
+      position relative
+      float left
+      height 34px
+      line-height 34px
+      z-index 23
+      overflow hidden
+      a
+        display inline-block
+        max-width 85px
+        height 34px
+        line-height 34px
+        font-size 13px
+        color $fff
+        cursor pointer
+        padding 0 17px
+        transition all,.3s
+        text-align center
+      .nav-close
+        x-opacity(0)
+        .n-triangle
+          position absolute
+          top -21px
+          right -21px
+          height 40px
+          width 40px
+          background rgba(0, 0, 0, .1)
+          x-transform(rotate(45deg))
+          z-index 24
+          x-opacity(0)
+        i.icon-smallclose
+          position absolute
+          top -9px
+          right 1px
+          font-size 14px
+          font-weight 700
+          color rgba(255,255,255,.6)
+          x-opacity(0)
+          z-index 25
+      .iconFont.icon-add2
+        display inline-block
+        padding 0 16px
+        height 20px
+        font-size 12px
+        line-height 20px
+        color rgba(255,255,255,.6)
+        border-left 1px solid rgba(255, 255, 255, .08)
+    .li-hover
+      x-transition(all ease 0.2s)
+      background-color rgba(0,0,0,0)
+      outline none
+    .li-hover.active
+      background-color $main-color
+    .li-hover:hover
+      x-transition(all ease 0.2s)
+      background-color $main-color
+    .li-hover.active:hover
+      .nav-close
+        x-opacity(1)
+        i.icon-smallclose
+          x-opacity(1)
+      .nav-close:hover
+        //opacity 0
+        .n-triangle
+          x-opacity(1)
+          x-box-shadow(0 1px 1px rgba(0,0,0,0.1))
+        i.icon-smallclose:hover
+          color rgba(255,255,255,1)!important
+
+    li.addli
+      float right
+      overflow inherit
+      &.li-more
+        float left
+      span
+        color rgba(255,255,255,.9)
+      .more
+        padding-right 10px
+        color rgba(255,255,255,.6)
+      .iconFont.icon-drop-down
+        font-size 12px
+        color rgba(255,255,255,.6)
+        x-inline-block()
+        vertical-align middle
+
+      &:hover
+        x-transition(all ease 0.2s)
+        .iconFont.icon-add2,
+        .more,
+        .iconFont.icon-drop-down
+          color rgb(255, 255, 255, 1)

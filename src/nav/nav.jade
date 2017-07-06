@@ -1,2 +1,8 @@
 header
-  h1 menu
+  .navigation#nav
+    .header-top-bottom
+    .nav-mask
+    ul.default-menu.left
+      li.li-hover.relative(ng-repeat='item in vm.navList')
+        a(ui-sref="{{item.href}}") {{item.name}}
+    
