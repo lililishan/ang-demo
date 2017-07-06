@@ -1,7 +1,7 @@
 import 'angular'
 import 'angular-ui-router'
-import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap'
+// import 'bootstrap/dist/css/bootstrap.css'
 
 /*模块注入*/
 import appTemplate from "./app.jade"
