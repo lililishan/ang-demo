@@ -1,1 +1,23 @@
-h1 list
+#list
+  .main-box-top
+    h1 list
+  .main-box-content
+    table
+      colgroup(width='5')
+      colgroup(width='25')
+      colgroup(width='20')
+      colgroup(width='20')
+      thead
+        tr 
+          th ID
+          th Name
+          th Date
+          th
+      tbody
+        tr(ng-repeat='item in vm.listData')
+          td {{item.id}}
+          td {{item.name}}
+          td {{item.date}}
+          td 
+            span Edit
+            span Delete

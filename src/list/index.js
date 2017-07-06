@@ -7,7 +7,8 @@ export default angular.module('app.list', [])
       parent: 'app',
       url:'/list',
       template: listTem,
-      controller: listCtrl
+      controller: listCtrl,
+      controllerAs: 'vm'
     })
   })
   .name

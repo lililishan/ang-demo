@@ -8,6 +8,7 @@ import appTemplate from "./app.jade"
 
 import nav from "./nav"
 import home from "./home"
+import list from "./list"
 
 // import commons from'./commons'
 import './index.styl'
@@ -21,7 +22,7 @@ console.log(`
 
 `)
 
-angular.module('demoApp', ['ui.router', nav, home])
+angular.module('demoApp', ['ui.router', nav, home, list])
 
     .config(($stateProvider, $urlRouterProvider) => {
         'ngInject'
