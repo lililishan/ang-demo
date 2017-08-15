@@ -1,7 +1,10 @@
 import 'angular'
 import 'angular-ui-router'
+
 // import 'bootstrap'
-// import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.css'
+
+import 'jquery'
 
 /*模块注入*/
 import appTemplate from "./app.jade"
@@ -44,5 +47,14 @@ angular.module('demoApp', ['ui.router', nav, home, list])
 
         $qProvider.errorOnUnhandledRejections(false)
     })
+    // .config = {
+    //     autoHideScrollbar: false,
+    //     theme: 'light',
+    //     advanced:{
+    //         updateOnContentResize: true
+    //     },
+    //         setHeight: 200,
+    //         scrollInertia: 0
+    // }
 
 

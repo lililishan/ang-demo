@@ -1,8 +1,8 @@
 export default class listCtrl{
 
-  constructor() {
+  constructor($http) {
     'ngInject'
-    Object.assign(this, [])
+    Object.assign(this, {$http})
     this.listData = [
       {id: '1', name: 'list_01', date:'2017-05-27'},
       {id: '21', name: 'list_02', date:'2017-05-27'},
@@ -17,11 +17,59 @@ export default class listCtrl{
       {id: '435', name: 'list_11', date:'2017-05-27'},
       {id: '902', name: 'list_12', date:'2017-05-27'},
       {id: '407', name: 'list_13', date:'2017-05-27'},
-      
-      
-      
-      
+      {id: '1111', name: 'list_09', date:'2017-05-27'},
+      {id: '666', name: 'list_10', date:'2017-05-27'},
+      {id: '435', name: 'list_11', date:'2017-05-27'},
+      {id: '902', name: 'list_12', date:'2017-05-27'},
+      {id: '407', name: 'list_13', date:'2017-05-27'}, 
+      {id: '1111', name: 'list_09', date:'2017-05-27'},
+      {id: '666', name: 'list_10', date:'2017-05-27'},
+      {id: '435', name: 'list_11', date:'2017-05-27'},
+      {id: '902', name: 'list_12', date:'2017-05-27'},
+      {id: '407', name: 'list_13', date:'2017-05-27'}, 
+      {id: '1111', name: 'list_09', date:'2017-05-27'},
+      {id: '666', name: 'list_10', date:'2017-05-27'},
+      {id: '435', name: 'list_11', date:'2017-05-27'},
+      {id: '902', name: 'list_12', date:'2017-05-27'},
+      {id: '407', name: 'list_13', date:'2017-05-27'}, 
+      {id: '1111', name: 'list_09', date:'2017-05-27'},
+      {id: '666', name: 'list_10', date:'2017-05-27'},
+      {id: '435', name: 'list_11', date:'2017-05-27'},
+      {id: '902', name: 'list_12', date:'2017-05-27'},
+      {id: '407', name: 'list_13', date:'2017-05-27'}, 
+      {id: '1111', name: 'list_09', date:'2017-05-27'},
+      {id: '666', name: 'list_10', date:'2017-05-27'},
+      {id: '435', name: 'list_11', date:'2017-05-27'},
+      {id: '902', name: 'list_12', date:'2017-05-27'},
+      {id: '407', name: 'list_13', date:'2017-05-27'}, 
+      {id: '1111', name: 'list_09', date:'2017-05-27'},
+      {id: '666', name: 'list_10', date:'2017-05-27'},
+      {id: '435', name: 'list_11', date:'2017-05-27'},
+      {id: '902', name: 'list_12', date:'2017-05-27'},
+      {id: '407', name: 'list_13', date:'2017-05-27'}, 
+      {id: '1111', name: 'list_09', date:'2017-05-27'},
+      {id: '666', name: 'list_10', date:'2017-05-27'},
+      {id: '435', name: 'list_11', date:'2017-05-27'},
+      {id: '902', name: 'list_12', date:'2017-05-27'},
+      {id: '407', name: 'list_13', date:'2017-05-27'}, 
+      {id: '1111', name: 'list_09', date:'2017-05-27'},
+      {id: '666', name: 'list_10', date:'2017-05-27'} 
     ]
+    // this.getList()
+  }
+
+  getList() {
+    this.$http.post('/Page/DmpTmpl/DmpTmpl/getList', {
+        currentPage: 1,
+        isAll: 0,
+        perPage: 20,
+        searchKey: ''
+    }).then((resp) => {
+        console.log(resp)
+        if(resp.code === 0) {
+
+        }
+    })
   }
 
 }

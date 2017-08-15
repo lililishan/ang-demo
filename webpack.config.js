@@ -37,6 +37,20 @@ var config = {
                 changeOrigin: true,
                 secure: false
             },
+            // '/rap/*': {
+            //     target: 'http://192.168.0.30/mockjsdata/33/',
+            //     pathRewrite: {
+            //     '^/rap': ''
+            //     },
+            //     changeOrigin: true,
+            //     secure: false
+            // },
+            // '/api/*': {
+            //     target: 'http://front.test.rmos.com/',
+            //     //target: 'https://reachmaxos.addnewer.com/',
+            //     changeOrigin: true,
+            //     secure: false
+            // },
         }
 
 
@@ -113,7 +127,7 @@ var config = {
         }),
         new EXTRACT_TEXT_PLUGIN('css/[name].css', {allChunks: true}),
         new HTML_WEBPACK_PLUGIN({
-            // favicon: 'favicon.ico',
+            favicon: '',
             filename: './index.html',//生成的html存放路径，相对于 path
             template: './src/index.jade',
             chunks: ['vendors', 'app'],//需要引入的chunk，不配置就会引入所有页面的资源.名字来源于你的入口文件
