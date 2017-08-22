@@ -1,0 +1,46 @@
+@require 'global'
+@require 'base'
+
+.inputBox
+  min-height 30px
+  line-height 30px
+  label
+    margin-right 10px
+    width 80px
+    text-align right
+    x-inline-block()
+    span.required
+      color $error
+      font-size 16px
+      x-inline-block()
+      vertical-align middle
+  .input
+    padding 0 10px
+    width 200px
+    box-sizing border-box
+    x-inline-block()
+    &:focus
+      border-color $main-color
+.errorBox
+  font-size 12px
+  margin-top 1px
+  line-height normal
+  &.prompt
+    color #fda73b
+  &.error
+    color #f46861
+  &.correct
+    color #6abc6d
+  span
+    x-inline-block()
+    font-size 12px
+    vertical-align middle
+  .inline-block
+    x-inline-block()
+    margin-bottom 10px
+i.iconFont
+  margin 0 8px 0 0
+  x-inline-block()
+  vertical-align middle
+
+
