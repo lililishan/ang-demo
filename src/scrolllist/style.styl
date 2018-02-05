@@ -1,0 +1,99 @@
+// #scrolllist
+//   .table
+//     border 1px solid red
+//   .table-tbody
+//     height 300px
+//     overflow auto
+//     border 1px solid blue
+// #table1
+//   width: 800px
+//   margin-left: 8%;
+//   text-align:center;
+//   border 1px solid red
+
+// #table1 th
+//   color:#333;
+//   font-weight:bold;
+//   font-size:13px;
+//   min-width:150px;
+//   text-align:center;
+
+// #table1 td
+//   font-size:13px;
+.tableBox
+  border 1px solid red
+  overflow-y hidden
+  &.scroll
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    .ad-table
+      display: flex;
+  .flex 
+    display: flex;
+    flex-wrap: nowrap; 
+  .filter-content,.filterth    
+    display flex
+    flex-wrap: nowrap; 
+.ad-table
+  // width: 120%;
+  border-collapse: collapse;
+  border-spacing: 0;
+.td-span
+  padding-left:20px
+  flex: 0 0 auto;
+// span.tdId
+//   flex:4
+// span.tdCn
+//   flex:14
+// span.tdCid
+//   flex:7
+// span.tdCname
+//   flex:9
+// span.tdBrand
+//   flex:8
+// span.tdProduct
+//   flex:8
+// span.tdStartD
+//   flex:9
+// span.tdEndD
+//   flex:9
+// span.tdStatus
+//   flex:7
+// span.tdMenu
+//   flex:35
+// span.tdPushRate
+//   flex:8
+// span.tdDeliveryRate
+//   flex:9
+.filterth
+  height 50px
+  line-height 30px
+  border-bottom 1px solid #eee
+
+.filterth
+  .th-date
+    padding-top 20px
+    line-height 30px
+    display inline-block
+.filter-content    
+  height 35px
+  line-height 36px
+  border-bottom 1px solid #eee
+  background-color #fff
+  .rate-col
+    color #e53935
+  .btn-box
+    .btnTxt
+      color #1c8acd
+      font-size 12px
+      margin-right 10px
+      display inline-block
+.ellipsis 
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;

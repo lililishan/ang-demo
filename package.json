@@ -47,12 +47,11 @@
   },
   "dependencies": {
     "angular": "^1.6.4",
-    "angular-animate": "^1.6.4",
     "angular-ui-bootstrap": "^2.5.0",
     "angular-ui-router": "^1.0.3",
     "bootstrap": "^3.3.7",
     "echarts": "^3.6.2",
-    "jquery": "^3.2.1",
+    "jquery": "1.12.4",
     "moment": "^2.18.1"
   }
 }

@@ -1,16 +1,11 @@
 header
-  .navigation#nav
-    .header-top-bottom
-    .nav-mask
-    ul.default-menu.left
-      li.li-hover.relative(ng-repeat='item in vm.navList')
-        a(ui-sref="{{item.href}}") {{item.name}}
-        //.navbar-fixed-top
-  //ul.nav.nav-tabs.navbar-inverse
-  //  li.active(role='presentation')
-  //    a(href='#') Home
-  //  li(role='presentation')
-  //    a(href='#') Profile
-  //  li(role='presentation')
-  //    a(href='#') Messages
-    
+  //.navigation#nav
+  //  .header-top-bottom
+  //  .nav-mask
+  //  ul.default-menu.left
+  //    li.li-hover.relative(ng-repeat='item in vm.navList')
+  //      a(ui-sref="{{item.href}}") {{item.name}}
+        //
+  ul.nav.nav-tabs.navbar-inverse.navbar-fixed-top
+    li.active(role='presentation' ng-repeat='item in vm.navList')
+      a(ui-sref="{{item.href}}") {{item.name}}

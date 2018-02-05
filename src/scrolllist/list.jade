@@ -1,0 +1,83 @@
+#scrolllist
+  .main-box-top
+    .main-top-tit ScrollList
+
+
+  .main-box-content  
+    .tableBox.scroll
+      .ad-table.flex
+        .filterth.flex
+          span.th-date.td-span.ng-scope.tdId ID
+          span.th-date.td-span.ng-scope.tdCn Campaign Name
+          span.th-date.td-span.ng-scope.tdCid C_CID
+          span.th-date.td-span.ng-scope.tdCname C_CID
+          span.th-date.td-span.ng-scope.tdBrand Brand
+          span.th-date.td-span.ng-scope.tdProduct Product
+          span.th-date.td-span.ng-scope.tdStartD Start Date
+          span.th-date.td-span.ng-scope.tdEndD End Date 
+          span.th-date.td-span.ng-scope.tdStatus Status
+          span.th-date.td-span.ng-scope.tdPushRate Push Rate
+          span.th-date.td-span.ng-scope.tdDeliveryRate Delivery Rate
+          span.th-date.td-span.ng-scope.tdMenu 操作
+
+      .ad-table.flex
+        .filter-content.flex
+          span.td-span.tdId
+            span.ng-binding 178
+          span.ellipsis.cp.td-span.tdCn Y2017_Loreal_RG_Extrait de Cologne_PDB_1117_1224
+          span.ellipsis.td-span.tdCid 0000000
+          span.ellipsis.td-span.tdCname aaaaaaa
+          span.ellipsis.td-span.tdBrand Loreal Paris
+          span.ellipsis.td-span.tdProduct Duofoam
+          span.td-span.tdStartD
+            span 2017-12-06
+          span.td-span.tdEndD
+            span 2017-12-06
+          span.td-span.tdStatus
+            span.c-status.waiting Unbound
+          span.td-span.tdPushRate 
+            span.rate-col 90%
+            span ／100%
+          span.td-span.tdDeliveryRate
+            span.rate-col 90%
+            span ／100%
+          span.td-span.tdMenu
+            .btn-box
+              .btnTxt Edit
+              span.lines |
+              .btnTxt View
+              .btnTxt Report
+              .btnTxt Adjustment
+              span.lines |
+              .btnTxt Delete
+  
+  .main-box-content.ng-hide
+    table.table
+      thead
+        tr
+          th 名称
+          th 状态
+          th 频次
+          th 筛选状态
+          th 更新时间
+          th 最近时间
+          th 操作
+    .table-tbody.ng-hide
+      table.table
+        tbody
+          tr(ng-repeat='item in vm.listData')
+            td {{item.name}}
+            td {{item.status}}
+            td {{item.cycle}}˜
+            td 进行中
+            td {{item.update_time * 1000 | date : 'yyyy-MM-dd'}}
+            td {{item.update_time * 1000 | date : 'yyyy-MM-dd'}}
+            td
+              span 编辑
+    
+
+
+    
+        
+          
+          

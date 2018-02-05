@@ -13,6 +13,12 @@ export default function() {
       href: 'list',
       type: 1,
       child: []
+    } ,
+    {
+      name: 'ScrllList',
+      href: 'slist',
+      type: 1,
+      child: []
     } 
   ]
 }

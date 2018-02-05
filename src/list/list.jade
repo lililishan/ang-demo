@@ -1,23 +1,35 @@
 #list
   .main-box-top
-    h1 list
+    .main-top-tit List
+
   .main-box-content
-    table
-      colgroup(width='5')
-      colgroup(width='25')
-      colgroup(width='20')
-      colgroup(width='20')
+    table.table
       thead
         tr 
-          th ID
-          th Name
-          th Date
-          th
+          th 产品编号
+          th 产品名称
+          th 购买数量
+          th 产品单价
+          th 产品总价
+          th 操作
       tbody
         tr(ng-repeat='item in vm.listData')
           td {{item.id}}
           td {{item.name}}
-          td {{item.date}}
-          td 
-            span Edit
-            span Delete
+          td
+            span(ng-click='vm.addQuantity(item.id,$index)') +
+            input(value='item.quantity' ng-model='item.quantity')
+            span(ng-click='vm.reduce(item.id,$index)') -
+          td {{item.price | currency:'￥'}}
+          td {{item.price * item.quantity}}
+          td.span-btn 
+            span Add
+            span(ng-click='vm.remove(item.id,$index)') Delete
+        tr
+          td 总购买价 :
+          td {{vm.totalPrice | currency:'￥'}}
+          td 总购买数量 :
+          td {{vm.totalQuantity}}
+          td(colspan='2' ng-click='vm.listData = " "')
+            button.btn 清空购物车
+          

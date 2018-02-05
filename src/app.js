@@ -5,15 +5,17 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 
 import 'jquery'
+// import 'particles.js'
 
 /*模块注入*/
 import appTemplate from "./app.jade"
 
+import common from'./commons'
 import nav from "./nav"
 import home from "./home"
 import list from "./list"
+import sctrlllist from './scrolllist'
 
-// import commons from'./commons'
 import './index.styl'
 
 console.log(Array.from('hello'))
@@ -25,7 +27,7 @@ console.log(`
 
 `)
 
-angular.module('demoApp', ['ui.router', nav, home, list])
+angular.module('demoApp', ['ui.router',common, nav, home, list, sctrlllist])
 
     .config(($stateProvider, $urlRouterProvider) => {
         'ngInject'
@@ -56,5 +58,7 @@ angular.module('demoApp', ['ui.router', nav, home, list])
     //         setHeight: 200,
     //         scrollInertia: 0
     // }
-
+// particlesJS.load('particles-js', 'particles.json', function() {
+//   console.log('callback - particles.js config loaded');
+// });
 
