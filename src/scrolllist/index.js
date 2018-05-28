@@ -19,4 +19,17 @@ export default angular.module('app.scrolllist', [])
     controller: scroListCtrl,
     controllerAs: 'vm'
   })
+
+  .factory('notify', ["$window","$timeout",function(win, timeout) {
+    var msgs = []
+    return function(msg) {
+      msgs.push(msg)
+      if(msgs.length == 3) {
+        timeout(function() {
+          win.alert(msgs.join("\n"))
+          msgs = []
+        }, 10)
+      }
+    }
+  }])
   .name
