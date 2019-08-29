@@ -14,7 +14,7 @@ var config = {
     //配置入口文件，有几个写几个。我这里有两个文件。一个是所有我需要引入的文件，一个是我的入口文件，app.js
     //支持数组形式，将加载数组中的所有模块，但以最后一个模块作为输出,比如下面数组里面的js,全部压缩在了vendor这个文件这里
     entry: {
-        vendors: ['angular', 'angular-ui-router','angular-animate','moment'],
+        vendors: ['angular', 'angular-ui-router',/*'angular-animate',*/'moment'],
         app: path.join(ROOT_PATH + './src/app.js')
     },
     //入口文件输出配置
